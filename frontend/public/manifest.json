@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Nigeria Properties",
+    "version": "1.0.0",
+    "description": "Find your dream home in Nigeria",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Nigeria Properties"
+    },
+    "icons": {
+        "16": "vite.svg",
+        "48": "vite.svg",
+        "128": "vite.svg"
+    }
+}

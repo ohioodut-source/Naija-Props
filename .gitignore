@@ -1,0 +1,24 @@
+node_modules/
+dist/
+.env
+.env.*
+.DS_Store
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+auth/
+.pytest_cache/
+
+# local database 
+*.db
+*.sqlite3
+
+# OS generated files
+Thumbs.db

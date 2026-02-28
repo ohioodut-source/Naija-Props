@@ -71,7 +71,7 @@ const SellProperty = () => {
         };
 
         try {
-            const response = await fetch('${API_URL}/properties', {
+            const response = await fetch(`${API_URL}/properties`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

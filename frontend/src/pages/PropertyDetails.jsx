@@ -197,7 +197,28 @@ const PropertyDetails = () => {
                     </div>
 
                     <h2 style={{ marginBottom: '1rem' }}>Description</h2>
-                    <p style={{ lineHeight: '1.6', color: 'var(--text-muted)' }}>{property.description}</p>
+                    <p style={{ lineHeight: '1.6', color: 'var(--text-muted)', marginBottom: '3rem' }}>{property.description}</p>
+
+                    <h2 style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <MapPin size={24} color="var(--primary-color)" />
+                        Virtual 3D Tour & Neighborhood
+                    </h2>
+                    <div className="glass" style={{ padding: '1rem', borderRadius: '15px', overflow: 'hidden' }}>
+                        {/* Embedding a generic 3D Google Street View for demonstration */}
+                        <iframe
+                            src={`https://www.google.com/maps/embed?pb=!4v1709289299446!6m8!1m7!1sCAoSLEFGMVFpcE5BWHo5dW1XaTJoNTRfaS1jX1F2Nl95Q3l3WnUzRzRwbDNuNnBN!2m2!1d9.0764785!2d7.398574!3f90!4f0!5f0.7820865974627469`}
+                            width="100%"
+                            height="400"
+                            style={{ border: 0, borderRadius: '10px' }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Property 3D View"
+                        ></iframe>
+                        <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+                            Explore the surrounding area in 3D. Drag to pan and click arrows to move down the street.
+                        </p>
+                    </div>
                 </div>
 
                 <div>

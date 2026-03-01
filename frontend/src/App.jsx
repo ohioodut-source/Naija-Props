@@ -14,6 +14,8 @@ import SellProperty from './pages/SellProperty';
 import Agents from './pages/Agents';
 import Profile from './pages/Profile';
 import KYCVerification from './pages/KYCVerification';
+import GovtProjects from './pages/GovtProjects';
+import CityTours from './pages/CityTours';
 import { API_URL } from './config';
 
 function Home({ properties, loading, error, handleSearch }) {
@@ -223,6 +225,8 @@ function App() {
               <Route path="/agents" element={<Agents />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/kyc" element={<KYCVerification />} />
+              <Route path="/projects" element={<GovtProjects />} />
+              <Route path="/tour" element={<CityTours />} />
             </Routes>
           </div>
         </AuthProvider>

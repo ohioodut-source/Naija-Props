@@ -1,12 +1,13 @@
 import React from 'react';
-import { Search, MapPin, DollarSign, Filter } from 'lucide-react';
+import { Search, MapPin, DollarSign, Filter, Bed } from 'lucide-react';
 
 const SearchBar = ({ onSearch }) => {
     const [filters, setFilters] = React.useState({
         location: '',
         minPrice: '',
         maxPrice: '',
-        type: ''
+        type: '',
+        bedrooms: ''
     });
 
     const handleChange = (e) => {
@@ -20,8 +21,8 @@ const SearchBar = ({ onSearch }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="glass" style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', marginTop: '-3rem', position: 'relative', zIndex: 10 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', alignItems: 'end' }}>
+        <form onSubmit={handleSubmit} className="glass" style={{ padding: '2rem', maxWidth: '1100px', margin: '0 auto', marginTop: '-3rem', position: 'relative', zIndex: 10 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem', alignItems: 'end' }}>
 
                 {/* Location */}
                 <div className="input-group">
@@ -42,7 +43,7 @@ const SearchBar = ({ onSearch }) => {
                     </div>
                 </div>
 
-                {/* Type */}
+                {/* Property Type */}
                 <div className="input-group">
                     <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}>Property Type</label>
                     <div style={{ position: 'relative' }}>
@@ -61,7 +62,46 @@ const SearchBar = ({ onSearch }) => {
                     </div>
                 </div>
 
-                {/* Budget Max */}
+                {/* Bedrooms */}
+                <div className="input-group">
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}>Bedrooms</label>
+                    <div style={{ position: 'relative' }}>
+                        <Bed size={18} style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+                        <select
+                            name="bedrooms"
+                            value={filters.bedrooms}
+                            onChange={handleChange}
+                            className="input"
+                            style={{ paddingLeft: '3rem', appearance: 'none', cursor: 'pointer' }}
+                        >
+                            <option value="">Any</option>
+                            <option value="1">1+ Bed</option>
+                            <option value="2">2+ Beds</option>
+                            <option value="3">3+ Beds</option>
+                            <option value="4">4+ Beds</option>
+                            <option value="5">5+ Beds</option>
+                        </select>
+                    </div>
+                </div>
+
+                {/* Min Price */}
+                <div className="input-group">
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}>Min Budget (₦)</label>
+                    <div style={{ position: 'relative' }}>
+                        <span style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', fontWeight: 'bold' }}>₦</span>
+                        <input
+                            type="number"
+                            name="minPrice"
+                            placeholder="e.g. 1,000,000"
+                            value={filters.minPrice}
+                            onChange={handleChange}
+                            className="input"
+                            style={{ paddingLeft: '2.5rem' }}
+                        />
+                    </div>
+                </div>
+
+                {/* Max Price */}
                 <div className="input-group">
                     <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}>Max Budget (₦)</label>
                     <div style={{ position: 'relative' }}>
@@ -77,9 +117,11 @@ const SearchBar = ({ onSearch }) => {
                         />
                     </div>
                 </div>
+            </div>
 
-                {/* Search Button */}
-                <button type="submit" className="btn btn-primary" style={{ height: '50px', marginTop: 'auto' }}>
+            {/* Search Button */}
+            <div style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+                <button type="submit" className="btn btn-primary" style={{ height: '50px', width: '100%', maxWidth: '300px' }}>
                     <Search size={20} />
                     Search Properties
                 </button>

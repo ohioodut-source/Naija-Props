@@ -45,7 +45,7 @@ const Header = () => {
             <NavLink to="/" style={navLinkStyle} end className="nav-link">Find a Home</NavLink>
             <NavLink to="/sell" style={navLinkStyle} className="nav-link">Sell/Rent</NavLink>
             <NavLink to="/agents" style={navLinkStyle} className="nav-link">Agents</NavLink>
-            <NavLink to="/projects" style={navLinkStyle} className="nav-link">Govt Projects</NavLink>
+            <NavLink to="/projects" style={navLinkStyle} className="nav-link">Projects</NavLink>
             <NavLink to="/tour" style={navLinkStyle} className="nav-link">City Tours</NavLink>
 
             {user ? (
@@ -92,7 +92,7 @@ const Header = () => {
             <NavLink to="/" onClick={() => setIsMenuOpen(false)} style={navLinkStyle} end className="py-2">Find a Home</NavLink>
             <NavLink to="/sell" onClick={() => setIsMenuOpen(false)} style={navLinkStyle} className="py-2">Sell/Rent</NavLink>
             <NavLink to="/agents" onClick={() => setIsMenuOpen(false)} style={navLinkStyle} className="py-2">Agents</NavLink>
-            <NavLink to="/projects" onClick={() => setIsMenuOpen(false)} style={navLinkStyle} className="py-2">Govt Projects</NavLink>
+            <NavLink to="/projects" onClick={() => setIsMenuOpen(false)} style={navLinkStyle} className="py-2">Projects</NavLink>
             <NavLink to="/tour" onClick={() => setIsMenuOpen(false)} style={navLinkStyle} className="py-2">City Tours</NavLink>
             <hr style={{ borderColor: 'var(--border-color)', margin: '0.5rem 0' }} />
             {user ? (
